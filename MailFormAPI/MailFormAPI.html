@@ -16,11 +16,13 @@
 
         button{
             margin-top: 10px;
+            margin-left: 5px;
             background-color: blue;
             color: cornsilk;
             border-color: blue;
             border-radius: 3px;
             box-shadow: 1px 1px black;
+            display: block;
 
             ;
         }
@@ -39,11 +41,12 @@
         <label for="Fnamefield">Förnamn:</label>
         <input type="text" id="Fnamefield" name="FName">
         <label for="Lnamefield">Efternamn:</label>
-        <input type="text"id=" Lnamefield" name="LName">
+        <input id="Lnamefield" name="LName">
         <label for="mfield">Meddelande:</label>
-        <input type="text"id="mfield" name="Message">
+        <textarea  id="mfield" rows="10" col="1" form="mailFrom" name="Message"></textarea>
         <button type="submit">send mail!</button>
     </form>
+   
 </div>
 <script>
    
