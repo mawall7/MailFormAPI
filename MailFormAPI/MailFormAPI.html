@@ -43,7 +43,7 @@
         <label for="Lnamefield">Efternamn:</label>
         <input id="Lnamefield" name="LName">
         <label for="mfield">Meddelande:</label>
-        <textarea  id="mfield" rows="10" col="1" form="mailFrom" name="Message"></textarea>
+        <textarea id="mfield" name="Message" form="mailForm" rows="10" cols="30" method="POST">skriv din text</textarea>
         <button type="submit">send mail!</button>
     </form>
    
@@ -53,7 +53,6 @@
    
 
   
- 
   var form = document.querySelector('form');
   var data = new FormData(form);
 
