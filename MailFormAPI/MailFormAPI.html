@@ -76,7 +76,19 @@
 	}).catch(function (error) {
 		console.warn(error);
 	});
+
+     clearForm();
+    
+      
+      
   })
+
+  function clearForm(){
+    document.getElementById("Lnamefield").value ="";
+    document.getElementById("mfield").value ="";
+    document.getElementById("Fnamefield").value ="";
+
+  }
   </script>
 </body>
 </html>
