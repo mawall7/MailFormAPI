@@ -8,18 +8,46 @@
     
 </head>
 <body>
-    <form id=mailForm action="" method="POST">
+    <form id=mailForm method="POST" url="">
         <title>Din Mailadress:</title>
-        <label for="mailfield">Din mailadress:</label>
-        <input type="text" id="mailfield" name="mailFrom" >
+        <!-- <label for="mailfield">Din mailadress:</label>
+        <input type="text" id="mailfield" name="mailFrom" > -->
         <label for="Fnamefield">Förnamn:</label>
-        <input type="text" id="Fnamefield" name="FirstName">
+        <input type="text" id="Fnamefield" name="FName">
         <label for="Lnamefield">Efternamn:</label>
-        <input type="text"id=" Lnamefield" name="FirstName">
+        <input type="text"id=" Lnamefield" name="LName">
         <label for="mfield">Meddelande:</label>
-        <input type="text"id="mfield" name="message">
-
+        <input type="text"id="mfield" name="Message">
+        <button type="submit">send mail!</button>
     </form>
-    
+
+<script>
+   
+
+  
+ 
+  var form = document.querySelector('form');
+  var data = new FormData(form);
+
+  document.addEventListener('submit', function(e){
+
+    e.preventDefault();
+    fetch( 'http://localhost:7071/api/sendmail', {
+		method: 'POST',
+		body: JSON.stringify(Object.fromEntries(new FormData(event.target))),
+        headers: { 'Content-type':'application/json; charset=UTF-8'},
+        mode: "no-cors"
+	}).then(function (response) {
+		if (response.ok) {
+			return response.json();
+		}
+		return Promise.reject(response);
+	}).then(function (data) {
+		console.log(data);
+	}).catch(function (error) {
+		console.warn(error);
+	});
+  })
+  </script>
 </body>
 </html>
